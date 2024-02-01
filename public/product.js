@@ -40,7 +40,7 @@ function runDimensions(id) {
       document.getElementById("three-d-container")?.classList.add("show");
     }
   });
-  //unregister(); call to remove listener
+  //unregister(); //call to remove listener
 }
 
 function setProductTitle(id) {
@@ -51,7 +51,7 @@ function setProductTitle(id) {
 }
 
 function preloadProductZoomImage(id) {
-  ZOOM_IMAGE_URL = `https://dimensions-art.cloudinary.net/d8s-demo-site/image/upload/f_auto,q_auto,w_1000/${id}/shoes/`;
+  ZOOM_IMAGE_URL = `https://dimensions-art.cloudinary.net/d8s-BlackrockDesign/image/upload/f_auto,q_auto,w_1000/${id}/shoes/`;
   TEMPLATES.forEach((templateName) => {
     const image = new Image();
     image.src = ZOOM_IMAGE_URL + templateName;
@@ -116,22 +116,23 @@ const TEMPLATES = [
 ];
 
 // const sku = window.location.search
+const sku = "DOG-ACC-SILVER-01";
 //   .replace("?", "")
 //   .split("&")
 //   .map((pair) => pair.split("="))
 //   .filter(([key, value]) => key === "sku")?.[0]?.[1];
 
-// if (!sku) {
-//   console.warn("No product SKU present in the URL!!!");
-// } else {
-//   preloadProductZoomImage(sku);
-//   setProductTitle(sku);
-//   initContainers(sku);
-//   runDimensions(sku);
-// }
+if (!sku) {
+  console.warn("No product SKU present in the URL!!!");
+} else {
+  preloadProductZoomImage(sku);
+  setProductTitle(sku);
+  initContainers(sku);
+  runDimensions(sku);
+}
 
-//  preloadProductZoomImage("DOG-ACC-SILVER-01");
-//  setProductTitle("DOG-ACC-SILVER-01");
+// preloadProductZoomImage(sku);
+// setProductTitle(sku);
 
-initContainers("DOG-ACC-SILVER-01");
-runDimensions("DOG-ACC-SILVER-01");
+// initContainers(sku);
+// runDimensions(sku);
