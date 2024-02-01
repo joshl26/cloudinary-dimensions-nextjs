@@ -1,6 +1,24 @@
-export default function Home() {
+import Script from "next/script";
+import React from "react";
+
+const HeadScripts = () => {
+  const scriptSrc = "https://dimensions-tag.cloudinary.com/all.js";
+  const scriptSrc2 = "https://dimensions-3d-viewer.cloudinary.com/all.js";
+  const scriptSrc3 = "product.js";
+
   return (
     <>
+      <Script src={scriptSrc2} />
+      <Script src={scriptSrc} />
+      <Script src={scriptSrc3}></Script>
+    </>
+  );
+};
+
+const ProductPage = () => {
+  return (
+    <div>
+      <HeadScripts />
       <div>
         <div className="header">
           <h1 className="site-header">Luxe & Co.</h1>
@@ -101,6 +119,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
+
+export default ProductPage;
